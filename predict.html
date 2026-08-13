@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eptus IA - Diagnostic</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='predict_style.css') }}">
+</head>
+
+<body>
+
+    <h1>Eptus IA</h1>
+
+    <div id="DiagnoInfo">
+        <h1>Eptus Diagnostic</h1>
+
+        <p>
+            Le diagnostic Eptus présente une vue synthétique des performances du modèle.
+            Il permet d’observer le <br>
+            résultat obtenu, la performance globale ainsi que le poids de chaque variable
+            dans la prédiction. Ces<br>
+            informations permettent de mieux comprendre le fonctionnement du modèle
+            et d’identifier les facteurs qui<br>
+            influencent le plus ses résultats.
+        </p>
+    </div>
+
+    <p>Prédiction et Analyse</p>
+
+    <div>
+        <h2>Résultat de la prédiction</h2>
+
+        <p>
+            Le modèle a prédit :
+            <strong>{{ prediction }}</strong>
+        </p>
+    </div>
+
+    <p>Performance</p>
+
+    <div class="accuracy_div">
+        <h2>{{ acc }} %</h2>
+
+        <p>Score de précision :</p>
+
+        <progress
+            value="{{ acc * 100 }}"
+            max="100">
+        </progress>
+    </div>
+
+    <p>Poids des variables</p>
+
+    <div>
+        <h2>Poids des variables :</h2>
+
+        <ul>
+            {% for variable in list_of %}
+                <li>
+                    <p>
+                        {{ variable }}
+                        :
+                        {{ (list_of[variable] * 100)|round(2) }}%
+                    </p>
+
+                    <progress
+                        value="{{ list_of[variable] * 100 }}"
+                        max="100">
+                    </progress>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</body>
+
+</html>

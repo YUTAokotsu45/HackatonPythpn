@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+
+    <title>Eptus</title>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='form_style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+    <h1 id="title">Eptus Prediction</h1>
+
+    <p id="explain">
+        Choisis un modèle déjà entraîné, renseigne des valeurs, et obtiens
+        <br>
+        une prédiction instantanée.
+    </p>
+
+    <p id="index">02</p>
+
+
+    <form method="post" action="/predict">
+
+        <article id="form_div">
+
+            {% for feature in features %}
+
+                <label for="{{ feature }}">
+                    {{ feature }}
+                </label>
+
+                <input
+                    type="text"
+                    id="{{ feature }}"
+                    name="{{ feature }}"
+                    placeholder="insert a value"
+                    required
+                >
+
+            {% endfor %}
+
+
+            <label for="type_problem">
+                Type de problème
+            </label>
+
+            <input
+                id="type_problem"
+                name="type_problem"
+                list="options"
+                type="text"
+                required
+            >
+
+            <datalist id="options">
+                <option value="Régression">
+                <option value="Classification">
+            </datalist>
+
+
+            <input
+                id="solve"
+                type="submit"
+                value="Predict"
+            >
+
+        </article>
+
+    </form>
+
+</body>
+
+</html>
