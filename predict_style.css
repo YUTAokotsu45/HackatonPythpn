@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Fira+Code:wght@300..700&family=Instrument+Serif:ital@0;1&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+
+:root {
+    --TitleColor: rgb(44, 44, 44);
+    --MainFont: "Bricolage Grotesque";
+    --FontIA: "Fira Code";
+    --border: #e5e5e5;
+}
+
+@keyframes anim_entree {
+    from {
+        transform: translateY(5px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+::selection {
+    background-color: green;
+    color: white;
+}
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+body {
+    margin: 0;
+    padding: 30px;
+
+    background-color: white;
+    color: var(--TitleColor);
+}
+
+/* =========================================================
+   TITRE PRINCIPAL
+   ========================================================= */
+
+body > h1 {
+    font-family: var(--MainFont);
+    color: var(--TitleColor);
+    text-align: center;
+    font-size: 45px;
+
+    animation: anim_entree 0.5s ease;
+}
+
+/* =========================================================
+   INFORMATIONS DIAGNOSTIC
+   ========================================================= */
+
+#DiagnoInfo {
+    width: 750px;
+    box-sizing: border-box;
+
+    margin: 30px auto 0;
+    padding: 30px;
+
+    background-color: #fafafa;
+    border: 2px solid #e5e5e5;
+    border-radius: 15px;
+
+    animation: anim_entree 0.6s ease;
+}
+
+#DiagnoInfo h1 {
+    color: var(--TitleColor);
+    font-family: var(--MainFont);
+    text-align: left;
+    margin: 0 0 15px 0;
+}
+
+#DiagnoInfo p {
+    font-family: var(--MainFont);
+    color: gray;
+    text-align: left;
+    margin: 0;
+
+    line-height: 1.5;
+}
+
+/* =========================================================
+   TITRES DE SECTION
+   ========================================================= */
+
+body > p {
+    width: 750px;
+
+    margin: 30px auto 10px;
+
+    color: green;
+    font-family: var(--FontIA);
+    text-align: left;
+}
+
+/* =========================================================
+   BLOCS
+   ========================================================= */
+
+body > div:not(#DiagnoInfo) {
+    width: 750px;
+    box-sizing: border-box;
+
+    margin: 0 auto 20px;
+    padding: 30px;
+
+    background-color: #fafafa;
+    border: 2px solid #e5e5e5;
+    border-radius: 15px;
+
+    animation: anim_entree 0.6s ease;
+}
+
+/* =========================================================
+   TITRES DES BLOCS
+   ========================================================= */
+
+body > div:not(#DiagnoInfo) h2 {
+    color: var(--TitleColor);
+    font-family: var(--MainFont);
+
+    text-align: left;
+
+    margin: 0 0 15px 0;
+}
+
+/* =========================================================
+   TEXTES
+   ========================================================= */
+
+body > div:not(#DiagnoInfo) p {
+    font-family: var(--MainFont);
+    color: gray;
+
+    margin: 0;
+}
+
+/* =========================================================
+   PREDICTION
+   ========================================================= */
+
+body > div:not(#DiagnoInfo) strong {
+    color: var(--TitleColor);
+    font-family: var(--FontIA);
+}
+
+/* =========================================================
+   PERFORMANCE
+   ========================================================= */
+
+.accuracy_div h2 {
+    font-family: var(--FontIA);
+    color: var(--TitleColor);
+}
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+progress {
+    width: 100%;
+    height: 8px;
+
+    border: none;
+    border-radius: 50px;
+
+    overflow: hidden;
+
+    background-color: #e5e5e5;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #e5e5e5;
+    border-radius: 50px;
+}
+
+progress::-webkit-progress-value {
+    background-color: green;
+    border-radius: 50px;
+}
+
+progress::-moz-progress-bar {
+    background-color: green;
+    border-radius: 50px;
+}
+
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+
+ul {
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+}
+
+li {
+    padding: 15px;
+
+    background-color: white;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    font-family: var(--FontIA);
+}
+
+li p {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 10px !important;
+
+    color: var(--TitleColor) !important;
+    font-family: var(--FontIA) !important;
+    font-size: 14px;
+}
+
+li progress {
+    height: 7px;
+}

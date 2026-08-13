@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Fira+Code:wght@300..700&family=Instrument+Serif:ital@0;1&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+
+:root {
+    --TitleColor: rgb(44, 44, 44);
+    --MainFont: "Bricolage Grotesque";
+    --FontIA: "Fira Code";
+    --border: #e5e5e5;
+
+}
+
+@keyframes anim_entree {
+    from {
+        transform: translateY(5px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+#title {
+    font-family: var(--MainFont);
+    color: var(--TitleColor);
+    text-align: center;
+    font-size: 45px;
+    animation: anim_entree 0.5s ease;
+}
+
+#explain {
+    font-family: var(--MainFont);
+    text-align: center;
+    color: gray;
+    animation: anim_entree 0.5s ease;
+    margin-bottom: 30px;
+}
+
+#form_div {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+    margin: 30px auto 0;
+    width: 700px;
+    height: fit-content;
+    max-width: 100%;
+    padding: 30px;
+    background-color: var(--Surface);
+    border: 1px solid var(--border);
+    margin-top: 30px;
+    border-radius: 15px;
+    animation: anim_entree 0.5s ease;
+}
+
+#form_div label {
+    font-family: var(--MainFont);
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--TitleColor);
+    margin-bottom: -12px;
+}
+
+#index {
+    font-family: var(--FontIA) ;
+    color: green;
+}
+
+#form_div input {
+    border: 1px solid var(--border) ;
+    border-radius: 8px;
+    display: flex;
+    width: fit-content;
+    font-family: var(--FontIA);
+    height: fit-content;
+    padding: 10px;
+}
+
+#form_div input::placeholder {
+    font-family: var(--FontIA);
+}
+
+#form_div input[type = "submit"] {
+    background-color: green ;
+    font-family: var(--FontIA);
+    color: white;
+    padding: 5px 30px;
+    display: block;
+    width: fit-content;
+}
+
+input:focus {
+    border: none;
+}
+
+#form_div p {
+    font-family: var(--FontIA) ;
+    color: green;
+}
